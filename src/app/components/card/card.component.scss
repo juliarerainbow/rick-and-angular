@@ -1,0 +1,16 @@
+// .card {
+
+//   }
+  
+  .card-image {
+    height: 360px;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  .card-title,
+  .card-subtitle {
+    color: white;
+    padding: 0px !important;
+    font-size: large;
+  }

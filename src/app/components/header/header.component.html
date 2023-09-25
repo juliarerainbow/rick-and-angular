@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+    <a class="home-link" routerLink="./home">
+        <button mat-icon-button>
+            <mat-icon>home</mat-icon>
+        </button>
+    </a>
+
+    <span>Rick and Morty Viewer</span>
+    <span class="spacer"></span>
+    <button (click)="previousPage()" mat-icon-button>
+        <mat-icon>arrow_back_ios</mat-icon>
+    </button>
+    <span>{{data.pagenumber}}</span>
+    <button (click)="nextPage()" mat-icon-button>
+        <mat-icon>arrow_forward_ios</mat-icon>
+    </button>
+</mat-toolbar>
