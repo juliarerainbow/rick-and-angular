@@ -2,11 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, map } from 'rxjs';
 import { CharacterDetail } from '../model/character-detail';
+import { CharacterComponent } from '../components/character/character.component';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
+
   allCharacters = new BehaviorSubject<CharacterDetail[]>([]);
   //variabile che si può subscribare - ci dice quando cambia
 
@@ -40,5 +42,13 @@ export class DataService {
   nextPage() {
     this.pagenumber++;
     this.getAllCharacters();
+  }
+
+  getSingleCharacter(id: string): Observable<CharacterDetail> {
+    return this.http.get<CharacterDetail>(this.BASE_URL + 'character/' +id );
+  }
+
+  getLocation (id: string) {
+    return this.http.get<CharacterDetail>(this.BASE_URL + 'location/' +id );
   }
 }
